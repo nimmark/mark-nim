@@ -102,6 +102,7 @@ body {
   line-height: 1.16;
   letter-spacing: -0.96px;
   word-spacing: 3px;
+  /* Mobile portrait (min 374px up to 575px) */
 }
 .display-text--outlined {
   -webkit-text-stroke: 4px #000000;
@@ -111,6 +112,16 @@ body {
 }
 .display-text--white {
   color: #ffffff;
+}
+@media only screen and (min-width: 23.4375em) and (max-width: 35.9375em) {
+  .display-text {
+    font-size: 3.5rem;
+  }
+}
+@media only screen and (max-width: 23.375em) {
+  .display-text {
+    font-size: 3.5rem;
+  }
 }
 
 .paragraph--2 {
