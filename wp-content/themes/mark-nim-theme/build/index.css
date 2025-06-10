@@ -634,6 +634,11 @@ body {
     max-width: 100%;
   }
 }
+@media only screen and (max-width: 23.375em) {
+  .section-hero__image {
+    max-width: 100%;
+  }
+}
 
 .section-skills {
   grid-column: center-start/center-end;
@@ -727,6 +732,11 @@ body {
   }
 }
 @media only screen and (min-width: 23.4375em) and (max-width: 35.9375em) {
+  .section-about__img {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 23.375em) {
   .section-about__img {
     width: 100%;
   }
