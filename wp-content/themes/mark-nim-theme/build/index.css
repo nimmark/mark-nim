@@ -11,6 +11,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
   /* Medium desktops and laptops (between 992px and 1199px) */
   /* Tablets and smaller laptops (between 768px and 991px) */
 }
@@ -27,6 +28,7 @@ html {
 
 body {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .grid-container {
