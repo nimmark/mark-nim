@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./sass/main.scss":
@@ -8,9 +7,56 @@
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "./src/modules/Aos.js":
+/*!****************************!*\
+  !*** ./src/modules/Aos.js ***!
+  \****************************/
+/***/ (() => {
+
+AOS.init();
+document.addEventListener("DOMContentLoaded", () => {
+  // Array of class names and their corresponding AOS animations
+  const animationTargets = [{
+    className: "skill-card__item",
+    aos: "flip-up"
+  }, {
+    className: "section-exp__content-box--item",
+    aos: "fade-right"
+  }, {
+    className: "testimonial-card",
+    aos: "zoom-in"
+  }
+  // Add more if needed
+  ];
+  animationTargets.forEach(({
+    className,
+    aos
+  }) => {
+    const elements = document.querySelectorAll(`.${className}`);
+    elements.forEach((el, index) => {
+      el.setAttribute("data-aos", aos);
+      el.setAttribute("data-aos-delay", index * 100);
+    });
+  });
+  AOS.init();
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".section-projects__item");
+  items.forEach((item, index) => {
+    const isEven = index % 2 === 1; // 0-based index: index 1,3,5... are visually even
+    const aosEffect = isEven ? "fade-left" : "fade-right";
+    item.setAttribute("data-aos", aosEffect);
+    item.setAttribute("data-aos-delay", index * 100); // optional: staggered animation
+  });
+  AOS.init();
+});
 
 /***/ }),
 
@@ -20,6 +66,7 @@ __webpack_require__.r(__webpack_exports__);
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -49,6 +96,7 @@ class MobileMenu {
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -129,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -185,6 +234,18 @@ document.addEventListener("DOMContentLoaded", () => {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -215,8 +276,9 @@ document.addEventListener("DOMContentLoaded", () => {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
+"use strict";
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
@@ -225,17 +287,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_modules_MobileMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/modules/MobileMenu */ "./src/modules/MobileMenu.js");
 /* harmony import */ var _src_modules_ScrollSpy__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/modules/ScrollSpy */ "./src/modules/ScrollSpy.js");
 /* harmony import */ var _src_modules_StickyHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/modules/StickyHeader */ "./src/modules/StickyHeader.js");
+/* harmony import */ var _src_modules_Aos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/modules/Aos */ "./src/modules/Aos.js");
+/* harmony import */ var _src_modules_Aos__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_modules_Aos__WEBPACK_IMPORTED_MODULE_4__);
 
 
 // Our modules / classes
 
 
 
+// import IntersectionObserver from "../src/modules/IntersectionObserver";
+
 
 // Instantiate a new object using our modules/classes
 const mobileMenu = new _src_modules_MobileMenu__WEBPACK_IMPORTED_MODULE_1__["default"]();
 const scrollSpy = new _src_modules_ScrollSpy__WEBPACK_IMPORTED_MODULE_2__["default"]();
 const stickyHeader = new _src_modules_StickyHeader__WEBPACK_IMPORTED_MODULE_3__["default"]();
+// const intersectionObserver = new IntersectionObserver();
+const animateOnScroll = new (_src_modules_Aos__WEBPACK_IMPORTED_MODULE_4___default())();
 })();
 
 /******/ })()

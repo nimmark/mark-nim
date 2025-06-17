@@ -364,7 +364,7 @@ body {
   min-height: 18rem;
   padding: 1rem;
   gap: 1.5rem;
-  transition: all 0.2s;
+  transition: background-color 0.2s, fill 0.2s, color 0.2s;
 }
 .skill-card__item svg, .skill-card__item path {
   width: 5.6rem;
@@ -383,6 +383,16 @@ body {
 
 .icon-link {
   display: block;
+}
+
+.link {
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  transition: color 0.2s;
+}
+.link:hover {
+  color: #d4d4d8;
 }
 
 .site-header {
@@ -530,6 +540,7 @@ body {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  z-index: 10;
 }
 
 .site-footer {
@@ -556,7 +567,9 @@ body {
 .section-hero {
   grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  place-items: center;
+  min-height: 85vh;
   /* Mobile landscape (between 576px and 767px) */
 }
 @media only screen and (max-width: 47.9375em) {
@@ -720,7 +733,7 @@ body {
 .section-about {
   grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   padding: 6rem 0;
   /* Mobile landscape (between 576px and 767px) */
 }
@@ -781,14 +794,9 @@ body {
 }
 .section-projects__content-box {
   grid-column: center-start/center-end;
-  /* Mobile landscape (between 576px and 767px) */
-}
-@media only screen and (max-width: 47.9375em) {
-  .section-projects__content-box {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 .section-projects__item {
   display: flex;
