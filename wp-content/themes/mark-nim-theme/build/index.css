@@ -593,6 +593,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   padding-top: 4rem;
+  min-height: 85vh;
+  place-items: center;
   /* Mobile landscape (between 576px and 767px) */
 }
 @media only screen and (max-width: 47.9375em) {
