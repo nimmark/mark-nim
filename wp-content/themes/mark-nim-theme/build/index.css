@@ -85,6 +85,12 @@ body {
   font-size: 2.4rem;
   line-height: 1.17;
   letter-spacing: -0.48px;
+  /* Mobile large (max width 425px) */
+}
+@media only screen and (max-width: 26.5625em) {
+  .heading-4 {
+    font-size: 2rem;
+  }
 }
 
 .heading-5 {
@@ -104,7 +110,9 @@ body {
   line-height: 1.16;
   letter-spacing: -0.96px;
   word-spacing: 3px;
-  /* Mobile portrait (min 374px up to 575px) */
+  /* Mobile portrait (max width 575px) */
+  /* Mobile large (max width 425px) */
+  /* Mobile medium (max width 375px) */
 }
 .display-text--outlined {
   -webkit-text-stroke: 4px #000000;
@@ -115,14 +123,19 @@ body {
 .display-text--white {
   color: #ffffff;
 }
-@media only screen and (min-width: 23.4375em) and (max-width: 35.9375em) {
+@media only screen and (max-width: 35.9375em) {
+  .display-text {
+    font-size: 4rem;
+  }
+}
+@media only screen and (max-width: 26.5625em) {
   .display-text {
     font-size: 3.5rem;
   }
 }
-@media only screen and (max-width: 23.375em) {
+@media only screen and (max-width: 23.4375em) {
   .display-text {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 
@@ -176,6 +189,10 @@ body {
 
 .text-justify {
   text-align: justify;
+}
+
+.break-word {
+  word-break: break-word;
 }
 
 .btn {
@@ -324,9 +341,9 @@ body {
   max-height: 3rem;
   max-width: 3rem;
   margin-right: 2.5rem;
-  /* Mobile portrait (min 374px up to 575px) */
+  /* Mobile portrait (max width 575px) */
 }
-@media only screen and (min-width: 23.4375em) and (max-width: 35.9375em) {
+@media only screen and (max-width: 35.9375em) {
   .title-icon {
     margin-right: 2rem;
   }
@@ -381,6 +398,11 @@ body {
 }
 .skill-card__item:hover h5 {
   color: #ffffff;
+}
+@media only screen and (max-width: 20em) {
+  .skill-card__item {
+    min-height: 15rem;
+  }
 }
 
 .icon-link {
@@ -558,7 +580,7 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-@media only screen and (max-width: 23.375em) {
+@media only screen and (max-width: 20em) {
   .site-footer__container {
     flex-direction: column;
     align-items: center;
@@ -641,7 +663,7 @@ body {
   display: block;
   /* Medium desktops and laptops (between 992px and 1199px) */
   /* Mobile landscape (between 576px and 767px) */
-  /* Mobile portrait (min 374px up to 575px) */
+  /* Mobile portrait (max width 575px) */
 }
 @media only screen and (max-width: 74.9375em) {
   .section-hero__image {
@@ -655,12 +677,12 @@ body {
     max-width: 80%;
   }
 }
-@media only screen and (min-width: 23.4375em) and (max-width: 35.9375em) {
+@media only screen and (max-width: 35.9375em) {
   .section-hero__image {
     max-width: 100%;
   }
 }
-@media only screen and (max-width: 23.375em) {
+@media only screen and (max-width: 20em) {
   .section-hero__image {
     max-width: 100%;
   }
@@ -672,16 +694,15 @@ body {
 }
 .section-skills__content-box {
   display: grid;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-  row-gap: 2rem;
+  gap: 2rem 2rem;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   justify-items: center;
-  /* Mobile portrait (min 374px up to 575px) */
+  /* Mobile medium (max width 375px) */
 }
-@media only screen and (min-width: 23.4375em) and (max-width: 35.9375em) {
+@media only screen and (max-width: 23.4375em) {
   .section-skills__content-box {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem 1rem;
   }
 }
 
@@ -701,7 +722,7 @@ body {
   justify-content: center;
   gap: 3rem;
 }
-@media only screen and (max-width: 23.375em) {
+@media only screen and (max-width: 20em) {
   .section-exp__content-box {
     padding: 0;
   }
@@ -750,19 +771,19 @@ body {
   display: block;
   margin: 0 auto;
   /* Mobile landscape (between 576px and 767px) */
-  /* Mobile portrait (min 374px up to 575px) */
+  /* Mobile portrait (max width 575px) */
 }
 @media only screen and (max-width: 47.9375em) {
   .section-about__img {
     width: 60%;
   }
 }
-@media only screen and (min-width: 23.4375em) and (max-width: 35.9375em) {
+@media only screen and (max-width: 35.9375em) {
   .section-about__img {
     width: 100%;
   }
 }
-@media only screen and (max-width: 23.375em) {
+@media only screen and (max-width: 20em) {
   .section-about__img {
     width: 100%;
   }
